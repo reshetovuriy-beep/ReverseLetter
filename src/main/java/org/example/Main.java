@@ -1,19 +1,38 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+    //Задание на разворот строки
+//        Input:  J@va the be$t!123
+//        Output: t@eb eht av$J!123
+        //Объявдяем стартовую строку
+        String letterInput = "J@va the be$t!123";
+        //Объявляем финишную строку
+        String letterOutput;
+        //Объявляем масстив char и сразу вносим стартовую строку
+        char [] chars = letterInput.toCharArray();
+        int left = 0;
+        int right = letterInput.length()-1;
 
-        for (int i = 1; i <= 10; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-         //   test test
+        while (left < right) {
+            //Проверяем левый символ. Если не буква сразу двигаем каретку влево
+            if (!(Character.isLetter(chars[left]))) {
+                left++;
+                //Иначе проверяем что правый символ тоже является буквой
+            } else if (Character.isLetter(chars[right])) {
+                char tmp = chars[left];     // меняем местами края
+                chars[left] = chars[right];
+                chars[right] = tmp;
+                left++;                     //и двигаем левую каретку
 
+            }
+            right--;            // в любом случае двигаем правую каретку
         }
+            System.out.println(chars);
+        }
+
+
+
+
     }
-}
+

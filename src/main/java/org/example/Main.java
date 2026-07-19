@@ -6,7 +6,7 @@ public class Main {
 //        Input:  J@va the be$t!123
 //        Output: t@eb eht av$J!123
         //Объявдяем стартовую строку
-        String letterInput = "J@va the be$t!123";
+        String letterInput = "1J@va the be$t!123G%";
         //Объявляем финишную строку
         String letterOutput;
         //Объявляем масстив char и сразу вносим стартовую строку
@@ -23,16 +23,16 @@ public class Main {
                 char tmp = chars[left];     // меняем местами края
                 chars[left] = chars[right];
                 chars[right] = tmp;
-                left++;                     //и двигаем левую каретку
-
+                left++;                     //и двигаем обе каретки
+                right--;
             }
-            right--;            // в любом случае двигаем правую каретку
+            //Проверяем правый символ. Если не буква - двигаем каретку вправо
+            if (!(Character.isLetter(chars[right]))) {
+                right--;
+            }
         }
             System.out.println(chars);
+
         }
-
-
-
-
     }
 

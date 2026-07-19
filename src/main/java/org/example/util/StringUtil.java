@@ -2,7 +2,7 @@ package org.example.util;
 
 public class StringUtil {
 
-    public static String reverse (String letterInput) {
+    public static String reverseLetter (String letterInput) {
 
         //Объявляем массив char и сразу вносим стартовую строку
         char[] chars = letterInput.toCharArray();
@@ -27,6 +27,5 @@ public class StringUtil {
             }
         }
         return new String(chars);
-       // System.out.println(chars);
     }
 }

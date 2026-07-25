@@ -4,8 +4,16 @@ public class StringUtil {
 
     public static String reverseLetter (String letterInput) {
 
-        //Объявляем массив char и сразу вносим стартовую строку
-        char[] chars = letterInput.toCharArray();
+        //Объявляем массив char и вносим стартовую строку после проверки на null
+        char[] chars;
+        //Добавил проверку, что исходная строка не null
+        if (letterInput != null) {
+            chars = letterInput.toCharArray();
+        } else {
+            System.out.println("Исходная строка null, заполните исходную строку каким-то значением!");
+            return "";
+        }
+
         int left = 0;
         int right = letterInput.length() - 1;
 

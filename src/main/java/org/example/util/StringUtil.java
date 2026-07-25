@@ -11,7 +11,7 @@ public class StringUtil {
             chars = letterInput.toCharArray();
         } else {
             System.out.println("Исходная строка null, заполните исходную строку каким-то значением!");
-            return null;
+            return "";
         }
 
         int left = 0;

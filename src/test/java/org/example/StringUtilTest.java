@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.example.util.StringUtil.reverseLetter;
 
 
-class ReverseLetterTest {
+class StringUtilTest {
 
     //Обычный случай
     @Test
